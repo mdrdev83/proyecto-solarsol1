@@ -1,0 +1,182 @@
+/*
+selector {
+propiedad: valor;
+}*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cossette+Texte:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*Reseteo con selector universal*/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* selector de etiqueta: deja todas las imagenes en 100px
+img {
+width: 100px;
+}*/
+
+/*selector de clase*/
+.logo{
+    width: 100px;
+}
+
+.tipografia{
+    font-size: 30px;
+}
+
+.bgorange{
+    background-color: rgb(239, 142, 7);
+}
+
+.titulo{
+    color: rgb(19, 18, 19);
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+}
+
+.titulo span{
+    color: rgb(19, 14, 167);
+}
+
+.whatsapp{
+    color: darkgreen;
+    font-size: 35px;
+}
+
+
+.orden{
+    padding: 15px 0;
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tamanoicono{
+    font-size: 30px;
+}
+
+/*flexbox*/
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}         
+
+ul{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+nav{
+    width: 70%;
+}
+
+.subrayado{
+    text-decoration: crimson 4px underline;
+}
+
+.box{
+    padding: 30px 10px;
+}
+
+.borde{
+    border: 2px solid red;
+    padding: 5px;
+}
+
+/*Inicio Grid Area*/
+      .gridarea {
+            display: grid;
+            grid-template-columns: 1.5fr 200px repeat(2, 1.5fr) 3fr;
+            grid-template-rows: repeat(5, 1fr);
+            grid-template-areas: 
+                "ct-beige vert vela-1 vela-1 vela-2"
+                "ct-beige vert vela-1 vela-1 vela-2"
+                "vela-3 vela-3 vela-1 vela-1 vela-2"
+                "vela-3 vela-3 ct-cafe ct-cafe ct-negro"
+                "vela-3 vela-3 ct-cafe ct-cafe ct-negro";
+            width: 80vw;
+            height: 80vh;  
+            margin: 0 auto;
+            gap: 10px;
+            position: relative;
+            background-color: #954313d4;
+            padding: 7px;
+            
+        }
+
+     .gridarea img {
+            object-fit: cover;
+            width: 100% ;
+            height: 100% ;
+            min-height: 0; /*  Permite que se reduzca si es necesario y ayuda a que las imagenes se vean siempre bien*/
+        }
+
+.gridarea .ctbeige{
+    grid-area: ct-beige;
+}
+
+.gridarea .ctcafe{
+    grid-area: ct-cafe;
+}
+
+.gridarea .ctnegro{
+    grid-area: ct-negro;
+}
+
+.gridarea .vela1{
+    grid-area: vela-1;
+}
+
+.gridarea .vela2{
+    grid-area: vela-2;
+}
+
+.gridarea .vela3{
+    grid-area: vela-3;
+}
+
+.gridarea .vertical{
+    grid-area: vert;
+}
+
+/* RESPONSIVE (se adapta a dispositivos mobiles con enfoque desktop first) */
+@media screen and (max-width: 768px) {
+
+header nav.desktop{
+  display: none;
+}
+
+header nav.mobile{
+  display: block;
+  text-align: center;
+}
+
+footer .footerMenu {
+display: none;
+}
+
+  .gridarea {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "ct-beige"
+      "ct-cafe"
+      "ct-negro"
+      "vert"
+      "vela-1"
+      "vela-2"
+      "vela-3";
+    width: 80vw;
+    height: auto;
+    margin: 0 auto;
+    gap: 10px;
+    position: relative;
+  }
+}
